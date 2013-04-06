@@ -1,0 +1,46 @@
+<head>
+  <title>remote_controller</title>
+</head>
+
+<body>
+  {{#isolate}} {{renderPage}} {{/isolate}}
+
+  {{>menu}}
+</body>
+
+<template name="index">
+  <h1>Index with menu</h1>
+</template>
+
+<template name="game">
+  <h1>Games</h1>
+  <h2>game id is: {{game._id}}</h2>
+  <div>remotely controlled value: {{game.value}}</div>
+
+  <a href="/game/{{game._id}}/controller">link to controller</a>
+</template>
+
+<template name="controller">
+  <h1>Controller</h1>
+  <h2>for a game {{game._id}}</h2>
+  <div>value: {{game.value}}</div>
+
+  <button class="value-up">Up</button>
+  <button class="value-down">Down</button>
+</template>
+
+<template name="not_found">
+  <h1>not_found</h1>
+</template>
+
+
+<template name="menu">
+  <div style="margin-top: 3em"></div>
+  <h1>All games</h1>
+  {{#each games}}
+  <ul>
+    <li><a href="/game/{{_id}}">game {{_id}}, value {{value}}</a></li>
+  </ul>
+  {{/each}}
+</template>
+
