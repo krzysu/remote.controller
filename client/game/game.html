@@ -1,7 +1,17 @@
 <template name="game">
-  <h1>Games</h1>
-  <h2>game id is: {{game._id}}</h2>
-  <div>remotely controlled value: {{game.value}}</div>
+  <h1>Game {{game._id}}</h1>
+  <p>remotely controlled value: {{game.value}}</p>
 
-  <a href="/game/{{game._id}}/controller">link to controller</a>
+  {{#if currentUser}} 
+    <a href="/game/{{game._id}}/controller">link to controller</a>
+  {{else}}
+    <h2>Login to play</h2>
+  {{/if}}
+
+  <h2>players</h2>
+  <ul>
+  {{#each players}}
+    <li>{{_id}} | {{name}}</li>
+  {{/each}}
+  </ul>
 </template>

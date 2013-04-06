@@ -10,3 +10,6 @@ router
 coffeescript
 stylus
 bootstrap
+
+accounts-ui
+accounts-password
