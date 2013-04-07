@@ -2,8 +2,6 @@
 Template.controller.game = () ->
   Games.findOne
     _id: Session.get('game_id')
-  ,
-    reactive: false
 
 Template.controller.events =
   'click .value-up': (e) ->
@@ -22,3 +20,4 @@ Template.controller.events =
 
 Template.controller.rendered = ->
   GameModel.addPlayer Meteor.userId()
+

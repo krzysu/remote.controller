@@ -14,15 +14,21 @@ Template.newGame.events =
 
 window.GameModel =
   addPlayer: (user_id) ->
-    game = Games.findOne
-      _id: Session.get('game_id')
-      players:
-        $not: user_id
-
-    if game?
+    unless @doesPlayerBelongToGame(user_id, Session.get('game_id'))
       Games.update
         _id: Session.get('game_id')
       ,
         $push:
           players: user_id
+
+  doesPlayerBelongToGame: (user_id, game_id) ->
+    game = Games.findOne
+      _id: game_id
+      players:
+        $not: user_id
+
+    if game?
+      return false
+    else
+      return true
 
