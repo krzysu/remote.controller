@@ -1,0 +1,32 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Remote game controller for the browser</title>
+</head>
+
+<body>
+  {{#isolate}} {{renderPage}} {{/isolate}}
+</body>
+
+<template name="index">
+  {{loginButtons}}
+  
+  <h1>Hi there, wanna play?</h1>
+
+  {{#if currentUser}} 
+    {{> openGames}}
+
+    {{> newGame}}
+  {{else}}
+    <h2>Login to see available games</h2>
+  {{/if}}
+</template>
+
+<template name="not_found">
+  <h1>not_found</h1>
+</template>
+
+

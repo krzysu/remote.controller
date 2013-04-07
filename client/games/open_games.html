@@ -1,0 +1,9 @@
+<template name="openGames">
+  <div style="margin-top: 3em"></div>
+  <h1>All games</h1>
+  {{#each games}}
+  <ul>
+    <li><a href="/game/{{_id}}">game {{_id}}, value {{value}}</a></li>
+  </ul>
+  {{/each}}
+</template>
