@@ -1,1 +1,1 @@
-Games = new Meteor.Collection('games')
+Games = new Mongo.Collection('games')

@@ -5,11 +5,18 @@
 
 autopublish
 insecure
-preserve-inputs
-router
 coffeescript
 stylus
 bootstrap
+underscore
+
+iron:router
+mongo
+templating
 
 accounts-ui
 accounts-password
+spacebars
+deps
+ejson
+session

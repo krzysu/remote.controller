@@ -10,7 +10,7 @@ Template.newGame.events =
       value: 10
       players: []
 
-    Meteor.Router.to('/game/' + id)
+    Router.go('/game/' + id)
 
 window.GameModel =
   addPlayer: (user_id) ->

@@ -8,11 +8,10 @@
 </head>
 
 <body>
-  {{#isolate}} {{renderPage}} {{/isolate}}
 </body>
 
 <template name="index">
-  {{loginButtons}}
+  {{> loginButtons}}
   
   <h1>Hi there, wanna play?</h1>
 
@@ -25,8 +24,5 @@
   {{/if}}
 </template>
 
-<template name="not_found">
-  <h1>not_found</h1>
-</template>
 
 

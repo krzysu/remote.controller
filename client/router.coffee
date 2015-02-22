@@ -1,13 +1,15 @@
-Meteor.Router.add
-  '/': 'index'
-  '/game/:game_id': (game_id) ->
-    Session.set('game_id', game_id)
-    return 'game'
 
-  '/game/:game_id/controller': (game_id) ->
-    Session.set('game_id', game_id)
-    return 'controller'
+Router.route '/', ->
+  @render 'index'
 
-  '/about': 'about'
+Router.route '/game/:game_id', ->
+  Session.set('game_id', @params.game_id)
+  @render 'game'
 
-  '*': 'not_found'
+Router.route '/game/:game_id/controller', ->
+  Session.set('game_id', @params.game_id)
+  @render 'controller'
+
+Router.route '/about', ->
+  @render 'about'
+
